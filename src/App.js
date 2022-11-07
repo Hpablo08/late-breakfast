@@ -4,6 +4,8 @@ import './App.css'
 import Choices from "./Components/Choices/Choices";
 // import Choices from "./Components/Choices/Choices";
 import Form from "./Components/Form/Form";
+import NavigationBar from "./Components/NavigationBar/NavigationBar";
+import { Route } from "react-router-dom";
 // import Randomizer from "./Components/Randomizer/Randomizer";
 
 class App extends Component {
@@ -28,15 +30,19 @@ class App extends Component {
   }
   render() {
     console.log(this.state.restaurants)
-return ( 
-    <main className="App">
-      <h1>Late Breakfast</h1>
-     <div>
-      <Choices restaurants={this.state.restaurants}/>
-     </div>
-      <Form addRestaurant={this.addRestaurant}/>
-    </main>
-  )
+return (
+  <main className="App">
+    <h1>Late Breakfast</h1>
+    <Form addRestaurant={this.addRestaurant} />
+    <div>
+      <NavigationBar restaurants={this.state.restaurants} />
+      <Route
+        path="/choices"
+        render={() => <Choices restaurants={this.state.restaurants} />}
+      />
+    </div>
+  </main>
+);
   }
   
 }
