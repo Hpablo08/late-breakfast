@@ -6,7 +6,7 @@ import Choices from "./Components/Choices/Choices";
 import Form from "./Components/Form/Form";
 import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import { Route } from "react-router-dom";
-// import Randomizer from "./Components/Randomizer/Randomizer";
+ import Randomizer from "./Components/Randomizer/Randomizer";
 
 class App extends Component {
   constructor() {
@@ -39,6 +39,10 @@ return (
       <Route
         path="/choices"
         render={() => <Choices restaurants={this.state.restaurants} />}
+      />
+      <Route
+        path="/randomizer"
+        render={() => <Randomizer restaurants={this.state.restaurants} />}
       />
     </div>
   </main>

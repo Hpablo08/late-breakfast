@@ -8,7 +8,7 @@ const NavigationBar = ({restaurants}) => {
   return (
     <div>
       <Link
-        to={`/choices`}
+        to={"/choices"}
         onClick={() => {
           <Choices restaurants={restaurants} />;
         }}
@@ -16,7 +16,7 @@ const NavigationBar = ({restaurants}) => {
         <button>Restaurant Choices</button>
       </Link>
       <Link
-        to={`/randomizer`}
+        to={"/randomizer"}
         onClick={() => {
           <Randomizer restaurants={restaurants} />;
         }}

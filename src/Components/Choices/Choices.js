@@ -1,7 +1,7 @@
 import React from "react";
 import "./Choices.css"
 import Card from "../Card/Card";
-import { Link } from "react-router-dom";
+
 
 const Choices = ({restaurants}) => {
   const displayChoices = restaurants.map((restaurant) => {
