@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from "react";
+import { fetchBrunchData } from "./api";
+import './App.css'
+import Choices from "./Components/Choices/Choices";
+import Form from "./Components/Form/Form";
+import Randomizer from "./Components/Randomizer/Randomizer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  const [restaurants, setRestaurants] = useState([])
+
+  const addRestaurant = (newRestaurant) => {
+    setRestaurants([...restaurants, newRestaurant]);
+  }
+  return ( 
+    <main className="App">
+      <h1>Late Breakfast</h1>
+      <Choices />
+      <Randomizer />
+      <Form />
+    </main>
+  )
 }
 
-export default App;
