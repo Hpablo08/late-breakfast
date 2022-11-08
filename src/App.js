@@ -32,17 +32,20 @@ class App extends Component {
   render() {
    // console.log(this.state.restaurants)
 return (
-  <main className="App">
-    <h1>Late Breakfast</h1>
-    <p>
-      Need Help making a Breakfast or Brunch Choice? Use the Randomizer and
-      we'll make the choice for you! Don't Like the Choice options? Add your own
-      choices below in the input!
-    </p>
-    <Form addRestaurant={this.addRestaurant} />
+  <div className="App">
+    
     <div>
       <NavigationBar restaurants={this.state.restaurants} />
       <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <div className="form">              
+              <Form addRestaurant={this.addRestaurant} />
+            </div>
+          )}
+        />
         <Route
           path="/choices"
           render={() => <Choices restaurants={this.state.restaurants} />}
@@ -57,7 +60,7 @@ return (
         />
       </Switch>
     </div>
-  </main>
+  </div>
 );
   }
   

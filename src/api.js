@@ -1,3 +1,3 @@
 export const fetchBrunchData = async () => {
-  return await fetch("http://localhost:3001/api/v1/brunch");
+  return await fetch("https://late-breakfast-api.vercel.app/api/v1/brunch");
 }

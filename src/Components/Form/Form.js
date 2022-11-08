@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-
+import "./Form.css"
 
 const Form = ({ addRestaurant }) => {
   const [name, setUserChoice] = useState("");
@@ -9,7 +9,7 @@ const Form = ({ addRestaurant }) => {
     const newChoice = {
       id: Date.now(),
       name,
-      time: [],
+      time: null,
       image:null,
       websiteLink: null,
       address:null
@@ -22,16 +22,23 @@ const Form = ({ addRestaurant }) => {
     setUserChoice("");
   };
   return (
-    <form className="form">
-      <input
-        type="text"
-        placeholder="Your Choice"
-        name="name"
-        value={name}
-        onChange={(event) => setUserChoice(event.target.value)}
-      />
-      <button onClick={submitUserChoice}>SUBMIT</button>
-    </form>
+    <div className="suggestion-container">
+      <h3 className="suggestion">
+        Need Help making a Breakfast or Brunch Choice? Use the Randomizer and
+        we'll make the choice for you! Don't Like the Choice options? Add your
+        own choices below in the input!
+      </h3>
+      <form className="form">
+        <input
+          type="text"
+          placeholder="Your Choice"
+          name="name"
+          value={name}
+          onChange={(event) => setUserChoice(event.target.value)}
+        />
+        <button className='submit' onClick={submitUserChoice}>SUBMIT</button>
+      </form>
+    </div>
   );
 };
 

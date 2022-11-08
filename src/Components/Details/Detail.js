@@ -44,8 +44,8 @@ class Details extends Component {
         </h2>
         <h2>Address: {rest.address}</h2>
         <p>{rest.time}</p>
-        <Link to={"/"}>
-          <button className="details-home-btn">Home</button>
+        <Link to={"/choices"}>
+          <button className="details-home-btn">Back to Restaurants</button>
         </Link>
       </div>
     );
