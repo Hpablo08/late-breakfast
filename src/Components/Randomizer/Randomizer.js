@@ -11,9 +11,7 @@ const Randomizer = ({restaurants}) => {
          id={restaurant.id}
          img={restaurant.image}
          name={restaurant.name}
-         time={restaurant.time.map((choices) => choices)}
-         websiteLink={restaurant.websiteLink}
-         address={restaurant.address}
+         address={restaurant.address}        
        />
      );
   })

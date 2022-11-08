@@ -11,9 +11,7 @@ const Choices = ({restaurants}) => {
       key={restaurant.id}
       id={restaurant.id}
       img={restaurant.image}
-      name={restaurant.name}
-      time={restaurant.time.map((choices) => choices)}
-      websiteLink={restaurant.websiteLink}
+      name={restaurant.name}      
       address={restaurant.address}
     />
     )

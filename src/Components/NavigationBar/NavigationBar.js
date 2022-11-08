@@ -25,7 +25,7 @@ const NavigationBar = ({restaurants}) => {
       </Link>
       <Link to={"/"}>
         <button className="details-home-btn">Home</button>
-      </Link>
+      </Link>      
     </div>
   );
 }
