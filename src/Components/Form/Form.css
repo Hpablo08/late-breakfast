@@ -1,0 +1,14 @@
+.suggestion-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 2px solid black;
+  width: 500px;
+  height: 350px;
+
+}
+
+.suggestion{
+  margin-left: 2px;
+  margin-right: 2px;
+}
