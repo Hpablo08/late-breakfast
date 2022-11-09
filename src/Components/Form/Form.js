@@ -10,10 +10,10 @@ const Form = ({ addRestaurant }) => {
       id: Date.now(),
       name,
       time: null,
-      image:null,
+      image:
+        "https://thumbs.dreamstime.com/b/s-your-choice-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-88635938.jpg",
       websiteLink: null,
-      address:null
-
+      address: null,
     };
     addRestaurant(newChoice);
     clearInput();

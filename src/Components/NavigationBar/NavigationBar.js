@@ -7,7 +7,7 @@ import Randomizer from "../Randomizer/Randomizer";
 const NavigationBar = ({restaurants}) => {
   return (
     <div className="nav-bar">
-      <h1 className="neon-sign">Late Breakfast</h1>
+      <h1 className="late-breakfast">Late Breakfast</h1>
       <div className="nav-btn-container">
         <Link
           to={"/choices"}
