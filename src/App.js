@@ -32,9 +32,7 @@ class App extends Component {
   render() {
    // console.log(this.state.restaurants)
 return (
-  <div className="App">
-    
-    <div>
+  <div className="App">    
       <NavigationBar restaurants={this.state.restaurants} />
       <Switch>
         <Route
@@ -59,7 +57,7 @@ return (
           render={({ match }) => <Details restaurantId={match.params.id} />}
         />
       </Switch>
-    </div>
+    
   </div>
 );
   }

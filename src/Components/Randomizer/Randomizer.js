@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../Card/Card";
+import './Randomizer.css'
 
 const Randomizer = ({restaurants}) => {
   console.log("random")
@@ -17,7 +18,8 @@ const Randomizer = ({restaurants}) => {
   })
   return (
     <div>
-      <h1>{displayRandomRestaurant}</h1>
+      <h1>Your Random Choice</h1>
+      <div className="RandomCard">{displayRandomRestaurant}</div>
     </div>
   );
 };
