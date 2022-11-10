@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 25px 100px 50px 100px;
+  margin: 25px 25px 50px 25px;
   background-color: #94b3b6;
   border: 2px solid #609998;
 }
@@ -16,6 +16,7 @@
 .rest-details-image{
   width:500px;
   height: 350px;
+  object-fit: scale-down;
 
 }
 .rest-name{
