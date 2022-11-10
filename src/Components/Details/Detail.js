@@ -13,8 +13,7 @@ class Details extends Component {
     };
   }
 
-  componentDidMount = async () => {    
-    console.log("hi") 
+  componentDidMount = async () => {     
     if (this.props.restaurantId > 21) {
       <h1>Your Choice has no details</h1>
     }  else {
@@ -33,8 +32,7 @@ class Details extends Component {
  };
 
   render() { 
-    let rest = this.state.currentRestaurant;  
-    console.log(rest.time)
+    let rest = this.state.currentRestaurant;    
     return (
       <div className="rest-details-container">
         <img

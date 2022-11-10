@@ -1,11 +1,14 @@
 .App {
   text-align: center;
-  background-color: #f8e9c4;
+  /* background-color: #f8e9c4; */
+  
 }
 
-.form {
-      display: flex;
-        flex-direction: row;
-        align-content: space-between;
-        justify-content: center;
+.home-page-container {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: center;
+   height:100vh;
+        
 }

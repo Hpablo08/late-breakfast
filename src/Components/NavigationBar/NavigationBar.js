@@ -1,13 +1,15 @@
 import React from "react";
-import './NavigationBar.css'
+import "./NavigationBar.css";
 import Choices from "../Choices/Choices";
 import { Link } from "react-router-dom";
 import Randomizer from "../Randomizer/Randomizer";
+import breakfast from "../../images/breakfast.png";
 
-const NavigationBar = ({restaurants}) => {
+const NavigationBar = ({ restaurants }) => {
   return (
     <div className="nav-bar">
-      <h1 className="late-breakfast">Late Breakfast</h1>
+      <img src={breakfast} className="logo" alt="late-breakfast-logo" />
+      {/* <h1 className="late-breakfast">Late 🥓 Breakfast</h1> */}
       <div className="nav-btn-container">
         <Link
           to={"/choices"}
@@ -31,6 +33,6 @@ const NavigationBar = ({restaurants}) => {
       </div>
     </div>
   );
-}
+};
 
-export default NavigationBar
+export default NavigationBar;
