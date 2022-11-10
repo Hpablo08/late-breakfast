@@ -9,7 +9,7 @@
   box-shadow: 0 0 10px grey;
   position: relative;
   background-color: #94B3B6;
-  height: 500px;
+  height: 360px;
 
 }
 
@@ -18,13 +18,18 @@
   transform: translateY(-0.25em);
 }
 
-.image {
+.user-image {
   object-fit: cover;
   width: 90%;
   height: 50%;
-  min-width: 200px;
-  max-width: 340px;
+  /* min-width: 200px;
+  max-width: 340px; */
   margin-top: 1vh;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.user-name{
+margin-left: 2px;
+margin-right: 2px;
 }
 

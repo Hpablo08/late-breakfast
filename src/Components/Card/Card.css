@@ -1,3 +1,4 @@
+
 .card {
   display: flex;
   flex-direction: column;
@@ -9,21 +10,22 @@
   box-shadow: 0 0 10px grey;
   position: relative;
   background-color: #94B3B6;
-  height: 500px;
+  height: 360px;
   
 }
 
 .card:hover,
 .card:focus {
   transform: translateY(-0.25em);
+  
 }
 
 .image {
   object-fit: cover;
   width: 90%;
   height: 50%;
-  min-width: 200px;
-  max-width: 340px;
+  /* min-width: 200px;
+  max-width: 340px; */
   margin-top: 1vh;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
@@ -37,9 +39,13 @@ a:visited {
   color: aliceblue;
 }
 
+.card-name{
+  font-size:1.5em;
+  margin-left: 2px;
+  margin-right: 2px;
+}
 .card-address{
-  margin-top:2px;
-  margin-bottom: 2px;
-  font-size: 1.2em;
+  margin: 2px;  
+  font-size: 1em;
 }
 
