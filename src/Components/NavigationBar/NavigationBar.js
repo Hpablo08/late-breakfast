@@ -4,6 +4,7 @@ import Choices from "../Choices/Choices";
 import { Link } from "react-router-dom";
 import Randomizer from "../Randomizer/Randomizer";
 import breakfast from "../../images/breakfast.png";
+import PropTypes from "prop-types";
 
 const NavigationBar = ({ restaurants }) => {
   return (
@@ -36,3 +37,7 @@ const NavigationBar = ({ restaurants }) => {
 };
 
 export default NavigationBar;
+
+NavigationBar.propTypes = {
+  restaurants: PropTypes.array,
+};

@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../Card/Card";
 import UserCard from "../UserCard/UserCard";
 import "./Randomizer.css";
+import PropTypes from "prop-types";
 
 const Randomizer = ({ restaurants }) => {
   const randomRestaurant = restaurants
@@ -38,3 +39,7 @@ const Randomizer = ({ restaurants }) => {
 };
 
 export default Randomizer;
+
+Randomizer.propTypes = {
+  restaurants: PropTypes.array,
+};

@@ -1,5 +1,6 @@
-import React, {useState} from "react";
-import "./Form.css"
+import React, { useState } from "react";
+import "./Form.css";
+import PropTypes from "prop-types";
 
 const Form = ({ addRestaurant }) => {
   const [name, setUserChoice] = useState("");
@@ -36,10 +37,16 @@ const Form = ({ addRestaurant }) => {
           value={name}
           onChange={(event) => setUserChoice(event.target.value)}
         />
-        <button className='submit' onClick={submitUserChoice}>SUBMIT</button>
+        <button className="submit" onClick={submitUserChoice}>
+          SUBMIT
+        </button>
       </form>
     </div>
   );
 };
 
 export default Form;
+
+Form.propTypes = {
+  addRestaurant: PropTypes.func,
+};

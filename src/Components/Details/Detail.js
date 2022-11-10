@@ -1,38 +1,38 @@
-import React,{Component} from "react";
-import './Details.css'
+import React, { Component } from "react";
+import "./Details.css";
 import { Link } from "react-router-dom";
 import { fetchBrunchData } from "../../api";
-
+import PropTypes from "prop-types";
 
 class Details extends Component {
   constructor() {
     super();
     this.state = {
       restaurants: [],
-      currentRestaurant: {}
+      currentRestaurant: {},
     };
   }
 
-  componentDidMount = async () => {     
-    if (this.props.restaurantId > 21) {
-      <h1>Your Choice has no details</h1>
-    }  else {
-   
-    try {
-      const restaurantList = await fetchBrunchData()
-      const data = await restaurantList.json() 
-      this.setState({ restaurants: data.brunchData }); 
-      const currentRestaurant = data.brunchData.find(rest => rest.id === Number(this.props.restaurantId))
-      this.setState({ currentRestaurant: currentRestaurant })              
+  componentDidMount = async () => {
+    // if (this.props.restaurantId > 21) {      
       
-    } catch {
-     this.setState({error: "Sorry, no restaurants found try again later"})
-  }
-}
- };
+    // } else {
+      try {
+        const restaurantList = await fetchBrunchData();
+        const data = await restaurantList.json();
+        this.setState({ restaurants: data.brunchData });
+        const currentRestaurant = data.brunchData.find(
+          (rest) => rest.id === Number(this.props.restaurantId)
+        );
+        this.setState({ currentRestaurant: currentRestaurant });
+      } catch {
+        this.setState({ error: "Sorry, no restaurants found try again later" });
+      }
+    // }
+  };
 
-  render() { 
-    let rest = this.state.currentRestaurant;    
+  render() {
+    let rest = this.state.currentRestaurant;
     return (
       <div className="rest-details-container">
         <img
@@ -41,7 +41,6 @@ class Details extends Component {
           alt={`image of ${rest.title}`}
         />
         <h1 className="rest-name">{rest.name}</h1>
-
         <h3 className="rest-address">Address: {rest.address}</h3>
         <p>{rest.time}</p>
         <h3 className="link">
@@ -55,5 +54,8 @@ class Details extends Component {
   }
 }
 
+export default Details;
 
-export default Details
+Details.propTypes = {
+  restaurantId: PropTypes.string,
+};

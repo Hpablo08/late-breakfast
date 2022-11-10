@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserCard.css";
+import PropTypes from "prop-types";
 
 const UserCard = ({ img, name }) => {
   return (
@@ -11,3 +12,8 @@ const UserCard = ({ img, name }) => {
 };
 
 export default UserCard;
+
+UserCard.propTypes = {  
+  img: PropTypes.string,
+  name: PropTypes.string, 
+};
