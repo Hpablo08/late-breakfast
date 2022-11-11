@@ -34,6 +34,9 @@ class App extends Component {
     return (
       <div className="App">
         <NavigationBar restaurants={this.state.restaurants} />
+        {!this.state.restaurants.length && (
+          <h2 className="error-message">{this.state.error}</h2>
+        )}
         <Switch>
           <Route
             exact

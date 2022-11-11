@@ -38,7 +38,7 @@ class Details extends Component {
         <img
           src={rest.image}
           className="rest-details-image hidden"
-          alt={`image of ${rest.title}`}
+          alt={`image of ${rest.name}`}
         />
         <h1 className="rest-name">{rest.name}</h1>
         <h3 className="rest-address">Address: {rest.address}</h3>

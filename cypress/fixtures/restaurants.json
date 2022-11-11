@@ -1,0 +1,21 @@
+{ "brunchData":[
+  {
+    "id": 3,
+    "name": "Mimosas",
+    "time": "Monday-Sunday: 8AM-3PM",
+    "image":
+      "https://images.squarespace-cdn.com/content/v1/5f5bd2906e5f774fb5829fec/1614356307444-9N68WJ4EVYYQUXM7K53Y/DSC_3272.jpg?format=1000w",
+    "websiteLink": "https://www.mimosasdenver.com/menu",
+    "address": "2752 Welton St, Denver, CO 80205"
+  },
+  {
+    "id": 21,
+    "name": "HashTAG",
+    "time": "Monday-Sunday: 7AM-2PM",
+    "image":
+      "https://media2.westword.com/den/imager/u/zoom/10111613/hashtag-20170628-lirette009.jpg",
+    "websiteLink": "https://www.hashtag-restaurant.com/",
+    "address": "10155 E 29th Dr #120, Denver, CO 80238"
+  }
+]
+}
