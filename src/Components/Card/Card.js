@@ -9,6 +9,9 @@ const Card = ({ id, img, name, address }) => {
       <img className="image" src={img} alt={name} />
       <h1 className="card-name">{name}</h1>
       <h2 className="card-address">{address}</h2>
+      <button className="fav-btn" title="Add Favorite">
+        &#10029;
+      </button>
     </Link>
   );
 };

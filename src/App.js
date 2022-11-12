@@ -8,6 +8,7 @@ import NavigationBar from "./Components/NavigationBar/NavigationBar";
 import { Route } from "react-router-dom";
 import Randomizer from "./Components/Randomizer/Randomizer";
 import { Switch } from "react-router-dom";
+import baconeggs from "./images/baconeggs.gif";
 
 class App extends Component {
   constructor() {
@@ -17,10 +18,11 @@ class App extends Component {
     };
   }
   componentDidMount = async () => {
+    this.setState({ loading: true });
     try {
       const restaurantList = await fetchBrunchData();
       const data = await restaurantList.json();
-      this.setState({ restaurants: data.brunchData });
+      this.setState({ restaurants: data.brunchData, loading: false });
     } catch {
       this.setState({ error: "Sorry, no restaurants found try again later" });
     }
@@ -29,11 +31,31 @@ class App extends Component {
     console.log(newRestaurant);
     this.setState({ restaurants: [...this.state.restaurants, newRestaurant] });
   };
+  deleteRestaurant = (id) => {
+    console.log(id);
+    const filteredIdeas = this.state.restaurants.filter(
+      (restaurant) => restaurant.id != id
+    );
+
+    this.setState({ restaurants: filteredIdeas });
+  };
+  addFavorite = (id) => {
+    
+  };
   render() {
     // console.log(this.state.restaurants)
     return (
       <div className="App">
         <NavigationBar restaurants={this.state.restaurants} />
+        <div className="loader-container">
+          {this.state.loading && (
+            <img
+              src={baconeggs}
+              className="loader"
+              alt="Eggs & Bacon Loading"
+            />
+          )}
+        </div>
         {!this.state.restaurants.length && (
           <h2 className="error-message">{this.state.error}</h2>
         )}
@@ -49,7 +71,12 @@ class App extends Component {
           />
           <Route
             path="/choices"
-            render={() => <Choices restaurants={this.state.restaurants} />}
+            render={() => (
+              <Choices
+                restaurants={this.state.restaurants}
+                deleteRestaurant={this.deleteRestaurant}
+              />
+            )}
           />
           <Route
             path="/randomizer"

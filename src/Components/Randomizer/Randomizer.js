@@ -32,7 +32,7 @@ const Randomizer = ({ restaurants }) => {
   });
   return (
     <div>
-      <h1>Your Random Choice</h1>
+      <h1 className="your-random-choice">Your Random Choice</h1>
       <div className="RandomCard">{displayRandomRestaurant}</div>
     </div>
   );
