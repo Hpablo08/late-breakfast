@@ -47,4 +47,10 @@ describe("Home page flows", () => {
       .contains("Eat at Home");
       cy.get(".delete-btn").click();
   })
+  it("Should be able to favorite a restaurant", () => {
+    cy.get('[href="/choices"] > button').click()
+    cy.get(":nth-child(1) > .fav-btn").click()
+    cy.get('[href="/favorites"] > button').click()
+    cy.get(".card").should('exist')
+  })
 });
