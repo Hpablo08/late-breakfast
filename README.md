@@ -15,8 +15,7 @@ Browse a selection of Denver breakfast and brunch restaurants to help make a dec
 - [ScreenShots](#ScreenShots)
 - [Getting Started](#GETTING-STARTED)
 - [Contributors](#Contributors)
-- [Wins and Challenges](#Wins-and-Challenges)
-- [Credits](#Credits)
+- [Future Directions](#Future-Directions)
 
 
 ## Overview
@@ -33,6 +32,7 @@ This was a solo showcase project assigned in week 18 of the Turing School of Sof
 * Used React Router to change views 
 * Made network requests to the self created RESTful API for data 
 * Tested the different browser pages with Cypress, while also stubbing and intercepting network requests.
+* A user can add a personal choice, be able to delete it, and favorite any restaurant of their choice. 
 * Accessibility: app is fully _tabbable_, and scored 100% on both Lighthouse and WAVE audits
 
 
@@ -44,14 +44,17 @@ This was a solo showcase project assigned in week 18 of the Turing School of Sof
 ![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
 
 ## Links
-Deployed Project: [Late-breakfast]()
+Deployed Project: [Late-breakfast](https://late-breakfast.vercel.app/)
+RESTfulapi: [late-breakfast-api](https://late-breakfast-api.vercel.app/api/v1/brunch)
+Deployed using ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ### Videos
 
-<!-- | Main Page View | Error Page View |
-|---------------|-----------------|
-<img src="https://media.giphy.com/media/DcMRAalKTP7JwWv1OR/giphy.gif" width=100%>|<p align="center"><br/><img src="https://media.giphy.com/media/S6NrhQt55hKast3noB/giphy.gif" width=100%></p>
- -->
+
+
+<img src="https://media.giphy.com/media/ROICoUIgETUamF53Dr/giphy.gif" width=100%>
+
+
  
 ## GETTING STARTED
 
@@ -62,7 +65,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 3. cd into the root of the project directory
 4. Run `npm install`
 5. To verify that it is setup correctly, run `npm start` in your terminal to start the local server. This runs the app in the development mode. Open http://localhost:3000 to view it in your browser.
-6. Open your favorite code editor and go to the `package.json` file to check that you have installed the required dependencies: `react-router-dom`, `react-youtube`, `@u-wave/react-vimeo`
 6. See the section about [deployment](https://create-react-app.dev/docs/deployment/) for more information.
 7. Enter `Ctrl + C` in your terminal to stop the local server at any time.
 
@@ -77,5 +79,6 @@ Hazel Pablo - pablohj08@gmail.com - [LinkedIn](https://www.linkedin.com/in/hazel
 
 
 ### Future Directions
-* 
+* I'd Like to add a local storage
+* I'd like to add a feature that randomizes only the favorite restaurants 
 
