@@ -3,22 +3,33 @@ import "./NavigationBar.css";
 import Choices from "../Choices/Choices";
 import { Link } from "react-router-dom";
 import Randomizer from "../Randomizer/Randomizer";
+import Favorites from "../Favorites/Favorites";
 import breakfast from "../../images/breakfast.png";
 import PropTypes from "prop-types";
 
-const NavigationBar = ({ restaurants }) => {
+const NavigationBar = ({ restaurants, faveRest, deleteRestaurant, addFavorite }) => {
   return (
     <div className="nav-bar">
       <img src={breakfast} className="logo" alt="late-breakfast-logo" />
-      {/* <h1 className="late-breakfast">Late 🥓 Breakfast</h1> */}
       <div className="nav-btn-container">
         <Link
           to={"/choices"}
           onClick={() => {
-            <Choices restaurants={restaurants} />;
+            <Choices restaurants={restaurants} addFavorite={addFavorite} />;
           }}
         >
           <button>Restaurant Choices</button>
+        </Link>
+        <Link
+          to={"/favorites"}
+          onClick={() => {
+            <Favorites
+              faveRest={faveRest}
+              deleteRestaurant={deleteRestaurant}
+            />;
+          }}
+        >
+          <button>Favorite</button>
         </Link>
         <Link
           to={"/randomizer"}
@@ -40,4 +51,6 @@ export default NavigationBar;
 
 NavigationBar.propTypes = {
   restaurants: PropTypes.array,
+  deleteRestaurant: PropTypes.func,
+  addFavorite: PropTypes.func,
 };

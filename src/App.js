@@ -9,12 +9,15 @@ import { Route } from "react-router-dom";
 import Randomizer from "./Components/Randomizer/Randomizer";
 import { Switch } from "react-router-dom";
 import baconeggs from "./images/baconeggs.gif";
+import Favorites from "./Components/Favorites/Favorites";
+import PageNotFound from "./Components/PageNotFound/PageNotFound";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       restaurants: [],
+      faveRest:[]
     };
   }
   componentDidMount = async () => {
@@ -40,13 +43,25 @@ class App extends Component {
     this.setState({ restaurants: filteredIdeas });
   };
   addFavorite = (id) => {
-    
+    console.log('add')
+    // let faveArray = [];
+    const findFavorites = this.state.restaurants.filter(
+      (restaurant) => restaurant.id === id
+    );
+  //   faveArray.push(findFavorites)
+   this.setState({ faveRest: findFavorites})
+    // this.state.faveRest.push(findFavorites)
   };
   render() {
     // console.log(this.state.restaurants)
     return (
       <div className="App">
-        <NavigationBar restaurants={this.state.restaurants} />
+        <NavigationBar
+          restaurants={this.state.restaurants}
+          faveRest={this.state.faveRest}
+          deleteRestaurant={this.deleteRestaurant}
+          addFavorite={this.addFavorite}
+        />
         <div className="loader-container">
           {this.state.loading && (
             <img
@@ -70,22 +85,36 @@ class App extends Component {
             )}
           />
           <Route
+            exact
             path="/choices"
             render={() => (
               <Choices
                 restaurants={this.state.restaurants}
                 deleteRestaurant={this.deleteRestaurant}
+                addFavorite={this.addFavorite}
               />
             )}
           />
           <Route
+            exact
+            path="/favorites"
+            render={() => (
+              <Favorites
+                faveRest={this.state.faveRest}
+                deleteRestaurant={this.deleteRestaurant}
+              />
+            )}
+          />
+          <Route
+            exact
             path="/randomizer"
             render={() => <Randomizer restaurants={this.state.restaurants} />}
           />
           <Route
-            path="/:id"
+            exact path="/:id"
             render={({ match }) => <Details restaurantId={match.params.id} />}
           />
+          <Route path="/*" component={PageNotFound} />
         </Switch>
       </div>
     );

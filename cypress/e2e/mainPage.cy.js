@@ -45,6 +45,6 @@ describe("Home page flows", () => {
     cy.get(".choices-container")
       .find(".user-card > .card-name")
       .contains("Eat at Home");
-      cy.get(".user-card > button").click()
+      cy.get(".delete-btn").click();
   })
 });
