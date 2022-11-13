@@ -111,10 +111,10 @@ class App extends Component {
             render={() => <Randomizer restaurants={this.state.restaurants} />}
           />
           <Route
-            exact path="/:id"
+            exact path="/location/:id"
             render={({ match }) => <Details restaurantId={match.params.id} />}
           />
-          <Route path="/*" component={PageNotFound} />
+          <Route path="*" component={PageNotFound} />
         </Switch>
       </div>
     );

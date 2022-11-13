@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const Card = ({ id, img, name, address, addFavorite }) => {
   return (
     <div className="card">
-      <Link to={`/${id}`} className="card-inside" aria-label={name}>
+      <Link to={`/location/${id}`} className="card-inside" aria-label={name}>
         <img className="image" src={img} alt={name} />
         <h1 className="card-name">{name}</h1>
         <h2 className="card-address">{address}</h2>

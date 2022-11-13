@@ -1,7 +1,5 @@
 .App {
-  text-align: center;
-  /* background-color: #f8e9c4; */
-  
+  text-align: center;  
 }
 
 .home-page-container {
@@ -15,7 +13,13 @@
 .loader-container{
 align-items: center;
 }
+
 .loader{
  width: 400px;
  margin-top: 15px;
+}
+
+a:link {
+  text-decoration: none;
+  color: aliceblue;
 }
