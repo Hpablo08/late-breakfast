@@ -14,21 +14,17 @@ class Details extends Component {
   }
 
   componentDidMount = async () => {
-    // if (this.props.restaurantId > 21) {      
-      
-    // } else {
-      try {
-        const restaurantList = await fetchBrunchData();
-        const data = await restaurantList.json();
-        this.setState({ restaurants: data.brunchData });
-        const currentRestaurant = data.brunchData.find(
-          (rest) => rest.id === Number(this.props.restaurantId)
-        );
-        this.setState({ currentRestaurant: currentRestaurant });
-      } catch {
-        this.setState({ error: "Sorry, no restaurants found try again later" });
-      }
-    // }
+    try {
+      const restaurantList = await fetchBrunchData();
+      const data = await restaurantList.json();
+      this.setState({ restaurants: data.brunchData });
+      const currentRestaurant = data.brunchData.find(
+        (rest) => rest.id === Number(this.props.restaurantId)
+      );
+      this.setState({ currentRestaurant: currentRestaurant });
+    } catch {
+      this.setState({ error: "Sorry, no restaurants found try again later" });
+    }
   };
 
   render() {

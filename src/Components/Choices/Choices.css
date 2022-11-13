@@ -4,9 +4,3 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
-/* 
-@media only screen and (min-width:300px) and (max-width:760px) {
-  .choices-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-} */

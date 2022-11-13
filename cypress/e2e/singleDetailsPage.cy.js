@@ -3,7 +3,7 @@ describe("Restaurant Choices page", () => {
     cy.intercept("GET", "https://late-breakfast-api.vercel.app/api/v1/brunch", {
       fixture: "restaurants.json",
     }).as("restaurants");
-    cy.visit("http://localhost:3000/3");
+    cy.visit("http://localhost:3000/location/3");
   });
   it("Should show a detail page for a restaurant", () => {
     cy.get(".rest-details-container")

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Choices.css"
+import "./Choices.css";
 import Card from "../Card/Card";
 import UserCard from "../UserCard/UserCard";
 import PropTypes from "prop-types";
@@ -33,7 +33,7 @@ const Choices = ({ restaurants, deleteRestaurant, addFavorite }) => {
   return <div className="choices-container">{displayChoices}</div>;
 };
 
-export default Choices
+export default Choices;
 
 Choices.propTypes = {
   restaurants: PropTypes.array,

@@ -34,11 +34,11 @@ describe("Restaurant Choices page", () => {
   it("Should be able to use the browser arrow buttons to go between the main page and individual path page", () => {
      cy.get(".choices-container > :nth-child(1)")
        .click()
-       .visit("http://localhost:3000/3")
+       .visit("http://localhost:3000/location/3")
        .wait(2000)
        .url()
-       .should("eq", "http://localhost:3000/3");
+       .should("eq", "http://localhost:3000/location/3");
      cy.go("back").reload().url().should("eq", "http://localhost:3000/choices");
-     cy.go("forward").reload().url().should("eq", "http://localhost:3000/3");
+     cy.go("forward").reload().url().should("eq", "http://localhost:3000/location/3");
   });
 });
