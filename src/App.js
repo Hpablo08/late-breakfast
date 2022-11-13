@@ -17,7 +17,7 @@ class App extends Component {
     super();
     this.state = {
       restaurants: [],
-      faveRest:[]
+      faveRest: [],
     };
   }
   componentDidMount = async () => {
@@ -43,14 +43,11 @@ class App extends Component {
     this.setState({ restaurants: filteredIdeas });
   };
   addFavorite = (id) => {
-    console.log('add')
-    // let faveArray = [];
-    const findFavorites = this.state.restaurants.filter(
+    console.log("add");
+    const findFavorites = this.state.restaurants.find(
       (restaurant) => restaurant.id === id
     );
-  //   faveArray.push(findFavorites)
-   this.setState({ faveRest: findFavorites})
-    // this.state.faveRest.push(findFavorites)
+     this.setState({ faveRest: [...this.state.faveRest, findFavorites] });
   };
   render() {
     // console.log(this.state.restaurants)
@@ -108,10 +105,16 @@ class App extends Component {
           <Route
             exact
             path="/randomizer"
-            render={() => <Randomizer restaurants={this.state.restaurants} />}
+            render={() => (
+              <Randomizer
+                restaurants={this.state.restaurants}
+                addFavorite={this.addFavorite}
+              />
+            )}
           />
           <Route
-            exact path="/location/:id"
+            exact
+            path="/location/:id"
             render={({ match }) => <Details restaurantId={match.params.id} />}
           />
           <Route path="*" component={PageNotFound} />

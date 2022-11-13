@@ -26,6 +26,7 @@ const NavigationBar = ({ restaurants, faveRest, deleteRestaurant, addFavorite })
             <Favorites
               faveRest={faveRest}
               deleteRestaurant={deleteRestaurant}
+              addFavorite={addFavorite}
             />;
           }}
         >
@@ -34,7 +35,7 @@ const NavigationBar = ({ restaurants, faveRest, deleteRestaurant, addFavorite })
         <Link
           to={"/randomizer"}
           onClick={() => {
-            <Randomizer restaurants={restaurants} />;
+            <Randomizer restaurants={restaurants} addFavorite={addFavorite} />;
           }}
         >
           <button>Randomizer</button>

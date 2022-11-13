@@ -4,7 +4,7 @@ import UserCard from "../UserCard/UserCard";
 import "./Randomizer.css";
 import PropTypes from "prop-types";
 
-const Randomizer = ({ restaurants }) => {
+const Randomizer = ({ restaurants, addFavorite }) => {
   const randomRestaurant = restaurants
     .sort((a, b) => 0.5 - Math.random())
     .slice(0, 1);
@@ -17,6 +17,7 @@ const Randomizer = ({ restaurants }) => {
           img={restaurant.image}
           name={restaurant.name}
           address={restaurant.address}
+          addFavorite={addFavorite}
         />
       );
     } else {
@@ -26,6 +27,7 @@ const Randomizer = ({ restaurants }) => {
           id={restaurant.id}
           img={restaurant.image}
           name={restaurant.name}
+          addFavorite={addFavorite}
         />
       );
     }
@@ -42,4 +44,5 @@ export default Randomizer;
 
 Randomizer.propTypes = {
   restaurants: PropTypes.array,
+  addFavorite: PropTypes.func,
 };
