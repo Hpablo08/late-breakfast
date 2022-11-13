@@ -17,6 +17,7 @@ const Form = ({ addRestaurant }) => {
       address: null,
     };
     addRestaurant(newChoice);
+    
     clearInput();
   };
   const clearInput = () => {
