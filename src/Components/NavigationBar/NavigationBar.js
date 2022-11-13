@@ -7,7 +7,12 @@ import Favorites from "../Favorites/Favorites";
 import breakfast from "../../images/breakfast.png";
 import PropTypes from "prop-types";
 
-const NavigationBar = ({ restaurants, faveRest, deleteRestaurant, addFavorite }) => {
+const NavigationBar = ({
+  restaurants,
+  faveRest,
+  deleteRestaurant,
+  addFavorite,
+}) => {
   return (
     <div className="nav-bar">
       <img src={breakfast} className="logo" alt="late-breakfast-logo" />
@@ -30,7 +35,7 @@ const NavigationBar = ({ restaurants, faveRest, deleteRestaurant, addFavorite })
             />;
           }}
         >
-          <button>Favorite</button>
+          <button>Favorites</button>
         </Link>
         <Link
           to={"/randomizer"}
@@ -52,6 +57,7 @@ export default NavigationBar;
 
 NavigationBar.propTypes = {
   restaurants: PropTypes.array,
+  faveRest: PropTypes.array,
   deleteRestaurant: PropTypes.func,
   addFavorite: PropTypes.func,
 };

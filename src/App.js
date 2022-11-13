@@ -31,11 +31,9 @@ class App extends Component {
     }
   };
   addRestaurant = (newRestaurant) => {
-    console.log(newRestaurant);
     this.setState({ restaurants: [...this.state.restaurants, newRestaurant] });
   };
   deleteRestaurant = (id) => {
-    console.log(id);
     const filteredIdeas = this.state.restaurants.filter(
       (restaurant) => restaurant.id != id
     );
@@ -43,14 +41,12 @@ class App extends Component {
     this.setState({ restaurants: filteredIdeas });
   };
   addFavorite = (id) => {
-    console.log("add");
     const findFavorites = this.state.restaurants.find(
       (restaurant) => restaurant.id === id
     );
-     this.setState({ faveRest: [...this.state.faveRest, findFavorites] });
+    this.setState({ faveRest: [...this.state.faveRest, findFavorites] });
   };
   render() {
-    // console.log(this.state.restaurants)
     return (
       <div className="App">
         <NavigationBar
