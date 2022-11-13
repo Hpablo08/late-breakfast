@@ -51,8 +51,9 @@ Deployed using ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style
 ### Videos
 
 
+![lb2](https://user-images.githubusercontent.com/106141130/201534581-b7c44027-ce97-405e-a05e-deadbbda2148.gif)
 
-<img src="https://media.giphy.com/media/ROICoUIgETUamF53Dr/giphy.gif" width=100%>
+
 
 
  
